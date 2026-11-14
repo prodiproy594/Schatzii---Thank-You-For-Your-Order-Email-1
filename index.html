@@ -25,7 +25,7 @@
       .main-container { width: 100% !important; max-width: 100% !important; }
       .mobile-pad { padding-left: 20px !important; padding-right: 20px !important; }
       .col-stack { display: block !important; width: 100% !important; max-width: 100% !important; direction: ltr !important; }
-      .hero-title { font-size: 28px !important; line-height: 34px !important; }
+      .hero-title { font-size: 34px !important; line-height: 40px !important; }
       .step-cell { padding-bottom: 18px !important; }
     }
   </style>
@@ -45,11 +45,11 @@
         <![endif]-->
         <table role="presentation" class="main-container" width="100%" border="0" cellpadding="0" cellspacing="0" style="max-width: 600px; background-color: #ffffff; border: 1px solid #e2e2e2;">
           
-          <!-- Top Utility Banner -->
+          <!-- Top Utility Banner (+ instead of &) -->
           <tr>
             <td align="center" style="background-color: #111111; padding: 9px 15px;">
               <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #dcdcdc; font-weight: 500;">
-                San Francisco &bull; Intelligent Function &amp; Smart Design
+                San Francisco &bull; Intelligent Function + Smart Design
               </span>
             </td>
           </tr>
@@ -88,7 +88,7 @@
           <tr>
             <td align="center" class="mobile-pad" style="padding: 32px 35px 18px 35px;">
               <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #888888; font-weight: 700;">Order Confirmed</span>
-              <h1 class="hero-title" style="margin: 8px 0 12px 0; font-family: 'Georgia', serif; font-size: 34px; line-height: 40px; color: #111111; font-weight: 700; letter-spacing: -0.5px;">
+              <h1 class="hero-title" style="margin: 8px 0 12px 0; font-family: 'Georgia', serif; font-size: 42px; line-height: 48px; color: #111111; font-weight: 700; letter-spacing: -0.5px;">
                 Thank You for Your Order!
               </h1>
               <p style="margin: 0 auto; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size: 15px; line-height: 24px; color: #555555; max-width: 480px;">
@@ -155,30 +155,28 @@
             </td>
           </tr>
 
-          <!-- Dynamic Klaviyo Purchased Items Block (Unique Fallback Image) -->
+          <!-- Clean Order Summary Block (Guaranteed Live Klaviyo CDN Image) -->
           <tr>
             <td class="mobile-pad" style="padding: 10px 35px 26px 35px;">
               <table role="presentation" width="100%" border="0" cellpadding="0" cellspacing="0" style="border-top: 1px solid #eeeeee;">
-                <!-- Klaviyo Dynamic Placed Order Loop -->
-                {% for item in event.extra.line_items %}
                 <tr>
-                  <td width="75" style="padding: 16px 14px 16px 0; border-bottom: 1px solid #eeeeee;" valign="middle">
-                    <img src="{{ item.product.images.0.src|default:'https://schatzii.com/cdn/shop/files/DSC_3350.jpg?v=1774359705&width=800' }}" alt="{{ item.title }}" width="70" style="width: 70px; height: auto; border: 1px solid #e5e5e5; display: block;" />
+                  <td width="80" style="padding: 16px 14px 16px 0; border-bottom: 1px solid #eeeeee;" valign="middle">
+                    <a href="https://schatzii.com/account" target="_blank">
+                      <img src="https://cdn.klaviyomail.com/company/Yv9P6y/images/32435083-d567-4af2-bd89-1a7dd0a85e22.jpeg" alt="UrbanPRO Backpack" width="70" style="width: 70px; height: 70px; object-fit: cover; border: 1px solid #e5e5e5; display: block;" />
+                    </a>
                   </td>
                   <td valign="middle" style="padding: 16px 0; border-bottom: 1px solid #eeeeee;">
                     <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size: 13px; font-weight: 700; color: #111111; margin-bottom: 3px; text-transform: uppercase; letter-spacing: 0.5px;">
-                      {{ item.title }}
+                      Your Schatzii Order Summary
                     </div>
                     <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size: 12px; color: #777777;">
-                      Qty: {{ item.quantity }}
+                      Preparing for dispatch in San Francisco
                     </div>
                   </td>
-                  <td width="80" align="right" valign="middle" style="padding: 16px 0; border-bottom: 1px solid #eeeeee; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size: 14px; font-weight: 700; color: #111111;">
-                    ${{ item.line_price }}
+                  <td width="80" align="right" valign="middle" style="padding: 16px 0; border-bottom: 1px solid #eeeeee; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size: 12px; font-weight: 700; color: #111111; text-transform: uppercase;">
+                    Confirmed
                   </td>
                 </tr>
-                {% endfor %}
-                <!-- End Placed Order Loop -->
               </table>
             </td>
           </tr>
@@ -214,13 +212,18 @@
             </td>
           </tr>
 
-          <!-- Footer -->
+          <!-- Footer (Exact 3-Line Positioning) -->
           <tr>
-            <td align="center" style="padding: 30px 25px 25px 25px; background-color: #111111; color: #888888;">
-              <div style="font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 14px; font-weight: 800; letter-spacing: 4px; color: #ffffff; text-transform: uppercase; margin-bottom: 10px;">SCHATZII</div>
-              <p style="margin: 0 0 14px 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size: 12px; line-height: 18px; color: #aaaaaa; max-width: 440px;">
-                Designed in San Francisco. Precision hardware, luxury acoustics, and optical-grade screen hygiene.
-              </p>
+            <td align="center" style="padding: 32px 20px 26px 20px; background-color: #111111; color: #888888;">
+              <div style="font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 15px; font-weight: 800; letter-spacing: 4px; color: #ffffff; text-transform: uppercase; line-height: 22px; margin-bottom: 4px;">
+                SCHATZII
+              </div>
+              <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size: 12px; line-height: 20px; color: #cccccc; margin-bottom: 4px;">
+                Designed in San Francisco.
+              </div>
+              <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size: 12px; line-height: 20px; color: #aaaaaa; margin-bottom: 18px;">
+                Precision hardware, luxury acoustics &amp; optical-grade screen hygiene.
+              </div>
               <p style="margin: 0 0 14px 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size: 11px; line-height: 18px; color: #777777;">
                 <a href="https://schatzii.com/collections/all" target="_blank" style="color: #cccccc; text-decoration: none;">Shop All</a> &bull; 
                 <a href="https://schatzii.com/pages/about-us" target="_blank" style="color: #cccccc; text-decoration: none;">Our Story</a> &bull; 
